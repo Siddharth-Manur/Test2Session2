@@ -2,7 +2,7 @@
 #include<math.h>
 void input(float *x1, float *y1, float *x2, float *y2)
 {
-  printf("enter the for x1,x2,y1,y2");
+  printf("enter the for x1,x2,y1,y2\n");
   scanf("%f %f %f %f",x1,x2,y1,y2);
 }
 float my_sqrt(float n)
@@ -32,4 +32,3 @@ int main()
   find_distance(a,b,c,d,&e);
   output(a,b,c,d,e);
 }
-
