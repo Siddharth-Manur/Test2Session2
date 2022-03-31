@@ -35,4 +35,5 @@ int main()
   x=input_number();
   y=is_prime(x);
   output(x,y);
+  return 0;
 }

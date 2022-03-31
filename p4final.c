@@ -51,4 +51,5 @@ int main()
   x=input();
   y=find_fibo(x);
   output(x,y);
+  return 0;
 }
