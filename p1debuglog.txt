@@ -1,1 +1,59 @@
+gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x906: file p1final.c, line 29.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1final.c:29
+29  {
+(gdb) n
+31    input(&a,&b,&c,&d);
+(gdb) s
+input (x1=0x7ffeba9d8d54, y1=0x7ffeba9d8d58, x2=0x7ffeba9d8d5c, 
+    y2=0x7ffeba9d8d60) at p1final.c:5
+5     printf("enter the for x1,x2,y1,y2\n");
+(gdb) n
+enter the for x1,x2,y1,y2
+6     scanf("%f %f %f %f",x1,x2,y1,y2);
+(gdb) n
+1 2 1 2  
+7   }
+(gdb) n
+main () at p1final.c:32
+32    find_distance(a,b,c,d,&e);
+(gdb) s
+find_distance (x1=1, y1=1, x2=2, y2=2, distance=0x7ffeba9d8d64) at p1final.c:22
+22    *distance = my_sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+(gdb) n
+23  }
+(gdb) n
+main () at p1final.c:33
+33    output(a,b,c,d,e);
+(gdb) s
+output (x1=1, y1=1, x2=2, y2=2, distance=1.41421354) at p1final.c:26
+26    printf("the distance between %0.2f,%0.2fand %0.2f,%0.2f is %0.2f",x1,y1,x2,y2,distance);
+(gdb) n
+27  }
+(gdb) n
+main () at p1final.c:34
+34  }
+(gdb) c
+Continuing.
+the distance between 1.00,1.00and 2.00,2.00 is 1.41[Inferior 1 (process 762) exited normally]
+(gdb) q

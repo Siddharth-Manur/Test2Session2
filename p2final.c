@@ -28,4 +28,5 @@ int main()
   input_triangle(&a,&b,&c,&d,&e,&f);
   x=is_triangle(a,b,c,d,e,f);
   output(a,b,c,d,e,f,x);
+  return 0;
 }
